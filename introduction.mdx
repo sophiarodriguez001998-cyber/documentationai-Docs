@@ -1,0 +1,104 @@
+---
+title: Introduction to JSON Viewer AI
+description: Discover JSON Viewer AI, a free online tool designed to simplify viewing, validating, and beautifying JSON data for better readability and error detection.
+---
+
+## Overview
+
+JSON Viewer AI empowers you to handle JSON data effortlessly. Paste any JSON into the tool at [https://jsonviewerai.com](https://jsonviewerai.com), and it instantly formats, validates, and visualizes your data. You gain tree views, syntax highlighting, and error detection without installing software. Developers, testers, and data analysts use it daily to debug APIs, review payloads, and share readable JSON.
+
+This free online tool processes complex structures in seconds, supporting files up to 10MB. No accounts or sign-ups required—start immediately.
+
+<Callout kind="info">
+  Access JSON Viewer AI at [https://jsonviewerai.com](https://jsonviewerai.com) to transform messy JSON into structured, color-coded views.
+</Callout>
+
+## Key Features
+
+Explore the core capabilities that make JSON Viewer AI indispensable.
+
+<Columns cols={3}>
+  <Card title="Interactive Tree View" icon="activity" href="#tree-view">
+    Expand and collapse nested objects and arrays. Navigate deeply nested JSON with click-to-expand nodes.
+  </Card>
+  <Card title="Real-Time Validation" icon="check-circle" href="#validation">
+    Detect syntax errors, missing commas, and invalid types instantly. Get precise line numbers for fixes.
+  </Card>
+  <Card title="Auto-Beautify" icon="sparkles" href="#beautify">
+    One-click formatting with customizable indentation. Copy beautified JSON or download as files.
+  </Card>
+</Columns>
+
+## Quick Start
+
+Get up and running in under a minute.
+
+<Steps>
+  <Step title="Paste Your JSON" icon="clipboard">
+    Open [https://jsonviewerai.com](https://jsonviewerai.com) and paste your JSON data into the editor.
+
+````json
+{"user":{"name":"Alice","age":30,"hobbies":["reading","coding"]},"settings":{"theme":"dark"}}
+````
+  </Step>
+  <Step title="View and Validate" icon="eye">
+    The tool auto-parses and highlights. Errors appear in red with fix suggestions.
+  </Step>
+  <Step title="Beautify and Export" icon="download">
+    Click `Beautify` for formatted output. Copy, download as `.json`, or share via URL.
+  </Step>
+</Steps>
+
+## Before and After: Beautify Example
+
+See the transformation in action.
+
+<CodeGroup tabs="Raw,Ugly,Beautified">
+  ```json
+  {"api":{"users":[{"id":1,"name":"Bob","email":"bob@example.com"}],"total":50}}
+  ```
+  ```json
+  {"api":{"users":[{"id":1,"name":"Bob","email":"bob@example.com"}],"total":50}}
+  ```
+  ```json
+  {
+    "api": {
+      "users": [
+        {
+          "id": 1,
+          "name": "Bob",
+          "email": "bob@example.com"
+        }
+      ],
+      "total": 50
+    }
+  }
+  ```
+</CodeGroup>
+
+## Benefits for You
+
+<Expandable title="Why Developers Love It" default-open="true">
+  Save hours debugging API responses. The tree view reveals hidden nesting issues at a glance. Validate payloads before sending to save backend cycles. Share clean links with teams—no more screenshot chains.
+</Expandable>
+
+<Expandable title="For Non-Technical Users">
+  Beautified JSON reads like structured outlines. Spot missing fields quickly without code knowledge.
+</Expandable>
+
+## Next Steps
+
+Dive deeper with these guides.
+
+<Columns cols={2}>
+  <Card title="Quickstart Guide" icon="rocket" href="/quickstart">
+    Detailed walkthrough for advanced features like bulk upload and custom themes.
+  </Card>
+  <Card title="API Integration" icon="code" href="/authentication">
+    Embed JSON Viewer AI in your apps or validate via API.
+  </Card>
+</Columns>
+
+<Callout kind="tip">
+  Bookmark [https://jsonviewerai.com](https://jsonviewerai.com) for daily use. Explore the full docs for pro tips on large datasets and error handling.
+</Callout>

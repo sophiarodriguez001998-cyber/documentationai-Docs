@@ -1,0 +1,144 @@
+---
+title: Getting Started with JSON Viewer AI
+description: Learn how to quickly access and use the JSON Viewer AI tool to view your first JSON data in under a minute.
+---
+
+## Prerequisites
+
+<Callout kind="info">
+
+You need only a modern web browser like Chrome, Firefox, or Safari. No installation or account required to start viewing JSON.
+
+</Callout>
+
+## Access the Tool
+
+Navigate to the [JSON Viewer AI](https://jsonviewer.ai) in your web browser. The interface loads instantly with a large input area ready for your JSON data.
+
+The tool supports unlimited JSON size for free, with AI-powered insights for complex structures.
+
+## View Your First JSON
+
+Follow these steps to paste and view JSON data immediately.
+
+<Steps>
+
+<Step title="Paste JSON Data" icon="clipboard">
+
+Copy any JSON from your clipboard or API response, then paste it into the input textarea.
+
+Use this realistic example of a user profile API response:
+
+````json
+{
+  "user": {
+    "id": 12345,
+    "name": "Jane Smith",
+    "email": "jane@example.com",
+    "profile": {
+      "avatar": "https://example.com/avatar.jpg",
+      "preferences": {
+        "theme": "dark",
+        "notifications": true
+      }
+    },
+    "roles": ["admin", "editor"]
+  },
+  "metadata": {
+    "createdAt": "2024-01-15T10:30:00Z",
+    "source": "api.example.com/users/12345"
+  }
+}
+````
+
+</Step>
+
+<Step title="Automatic Formatting" icon="wand-2">
+
+The tool instantly parses, validates, and beautifies your JSON. Errors highlight in red with AI-suggested fixes.
+
+Scroll through the tree view on the right to expand nested objects like `profile.preferences`.
+
+</Step>
+
+<Step title="Explore Views" icon="eye">
+
+Switch between views using the toolbar:
+
+<Tabs>
+
+<Tab title="Tree View" icon="git-branch">
+
+Default hierarchical view for easy navigation of deep structures.
+
+</Tab>
+
+<Tab title="Table View" icon="table">
+
+Tabular format ideal for arrays and flat objects.
+
+</Tab>
+
+<Tab title="Raw JSON" icon="code">
+
+Original unformatted JSON for copy-paste.
+
+</Tab>
+
+</Tabs>
+
+</Step>
+
+</Steps>
+
+## Before and After Comparison
+
+See how JSON Viewer AI transforms minified data:
+
+<CodeGroup tabs="Minified,Beautified">
+
+```json
+{"user":{"id":12345,"name":"Jane Smith","email":"jane@example.com"}}
+```
+
+```json
+{
+  "user": {
+    "id": 12345,
+    "name": "Jane Smith",
+    "email": "jane@example.com"
+  }
+}
+```
+
+</CodeGroup>
+
+## Next Steps
+
+<Columns cols={3}>
+
+<Card title="Validate JSON" icon="check-circle" href="#">
+
+Detect syntax errors and schema issues in seconds.
+
+</Card>
+
+<Card title="Beautify & Minify" icon="wand-2" href="#">
+
+Customize indentation and output formats.
+
+</Card>
+
+<Card title="AI Insights" icon="zap" href="#">
+
+Get summaries and path queries powered by AI.
+
+</Card>
+
+</Columns>
+
+<Callout kind="tip">
+
+Save your workspace or share via URL for collaboration. Explore advanced features like search and export next.
+
+</Callout>

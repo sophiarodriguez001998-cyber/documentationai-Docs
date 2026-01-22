@@ -1,0 +1,142 @@
+---
+title: Changelog
+description: Track the latest updates and improvements to JSON Viewer AI, including new features and bug fixes.
+---
+
+## Recent Changes
+
+<Callout kind="info">
+  JSON Viewer AI releases updates regularly to enhance your JSON handling experience. The latest version introduces advanced validation and tree view improvements.
+</Callout>
+
+<Columns cols={3}>
+  <Card title="Quickstart" icon="rocket" href="/quickstart">
+    Get started with the basic viewer in under 2 minutes.
+  </Card>
+  <Card title="Validation Guide" icon="check-circle" href="/validation">
+    Learn about error detection and fixes.
+  </Card>
+  <Card title="Beautify JSON" icon="sparkles" href="/beautify">
+    Transform messy JSON into readable formats.
+  </Card>
+</Columns>
+
+## Version History
+
+<Update label="2024-10-15" description="v1.3.0" tags={["feature", "improvement"]}>
+  ## New Features
+
+  - Added interactive tree view for navigating deeply nested JSON structures.
+  - Introduced real-time syntax highlighting with 10+ color themes.
+
+  ## Improvements
+
+  - Enhanced validation engine to detect schema mismatches `{required: true}` faster.
+  - Performance boost: Large JSON files (`>1MB`) now load `<2s`.
+
+  ## Bug Fixes
+
+  - Fixed collapse/expand states not persisting in tree view.
+  - Resolved copy-to-clipboard issues on mobile devices.
+</Update>
+
+<Update label="2024-09-20" description="v1.2.0" tags={["feature", "bugfix"]}>
+  ## New Features
+
+  - Schema validation integration: Paste a JSON schema and validate against it.
+  - Export options: Download beautified JSON as formatted file or shareable link.
+
+  ## Improvements
+
+  - Beautify now supports custom indentation (2-8 spaces).
+  - Search functionality highlights all matches across the entire document.
+
+  ## Bug Fixes
+
+  - Corrected parsing errors for JSON with trailing commas.
+  - Fixed infinite loading spinner for malformed inputs.
+</Update>
+
+<Update label="2024-08-10" description="v1.1.0" tags={["improvement", "bugfix"]}>
+  ## New Features
+
+  - Dark mode toggle for better low-light viewing.
+  - Keyboard shortcuts: `Ctrl+B` to beautify, `Ctrl+V` to validate.
+
+  ## Improvements
+
+  - UI redesign for faster navigation between tabs (View, Validate, Beautify).
+  - Added line numbers and folding for code-like JSON editing.
+
+  ## Bug Fixes
+
+  - Patched security vulnerability in URL import handling.
+  - Stabilized drag-and-drop file upload for all browsers.
+</Update>
+
+## Example: New Tree View Feature
+
+Demonstrates the improved tree view on a sample API response.
+
+<CodeGroup tabs="Raw,Beautified">
+  ```json
+  {"data":{"user":{"id":1,"name":"Alice","orders":[{"id":101,"total":99.99},{"id":102,"total":49.50}]}},"status":"success"}
+  ```
+  ```json
+  {
+    "data": {
+      "user": {
+        "id": 1,
+        "name": "Alice",
+        "orders": [
+          {
+            "id": 101,
+            "total": 99.99
+          },
+          {
+            "id": 102,
+            "total": 49.50
+          }
+        ]
+      }
+    },
+    "status": "success"
+  }
+  ```
+</CodeGroup>
+
+## Stay Updated
+
+<Steps>
+  <Step title="Subscribe" icon="bell">
+    Join the newsletter at https://jsonviewerai.com/newsletter for release announcements.
+  </Step>
+  <Step title="Check Dashboard" icon="monitor">
+    Visit your dashboard at https://dashboard.jsonviewerai.com/updates.
+  </Step>
+  <Step title="Feedback" icon="message-circle">
+    Share suggestions via the in-app form.
+  </Step>
+</Steps>
+
+<Expandable title="How to Upgrade" default-open="true">
+  JSON Viewer AI updates automatically in your browser. Clear cache if needed:
+
+  ```
+  ```bash
+  # For development: Hard refresh Ctrl+Shift+R
+  ```
+  ```
+
+  Test new features with this JSON:
+
+  ```json
+  {
+    "api": "https://api.example.com/users",
+    "response": {
+      "count": 42,
+      "users": []
+    }
+  }
+  ```
+</Expandable>

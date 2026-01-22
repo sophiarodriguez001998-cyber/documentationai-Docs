@@ -1,0 +1,134 @@
+---
+title: Core Features of JSON Viewer AI
+description: Explore the main capabilities of JSON Viewer AI, including viewing complex structures, validation, and beautification for enhanced JSON handling.
+---
+
+## Overview
+
+JSON Viewer AI simplifies working with JSON data through its core features: an interactive tree view for navigating nested structures, robust validation to catch syntax errors, and beautification options for improved readability. Paste any JSON into the tool, and you gain instant insights without complex setups.
+
+<Columns cols={3}>
+  <Card title="Interactive Tree View" icon="activity" href="#tree-view">
+    Expand and collapse nested objects and arrays effortlessly.
+  </Card>
+  <Card title="JSON Validation" icon="check-circle" href="#validation">
+    Detect and highlight syntax errors in real time.
+  </Card>
+  <Card title="Beautification" icon="sparkles" href="#beautification">
+    Format JSON with customizable indentation and spacing.
+  </Card>
+</Columns>
+
+## Interactive Tree View
+
+Navigate complex JSON structures using the interactive tree view. Click to expand objects and arrays, revealing nested data at any depth. This visual representation makes it easy to inspect values, search properties, and copy specific paths.
+
+For example, consider a user profile API response:
+
+```json
+{
+  "user": {
+    "id": 123,
+    "name": "Jane Doe",
+    "profile": {
+      "email": "jane@example.com",
+      "preferences": {
+        "theme": "dark",
+        "notifications": true
+      }
+    }
+  }
+}
+```
+
+In the tree view, expand `user` > `profile` > `preferences` to access `theme` directly. Search for keys like `email` to jump to locations instantly.
+
+<Callout kind="tip">
+  Use the search bar in the tree view to filter properties across deep nests—ideal for large API responses.
+</Callout>
+
+## JSON Validation
+
+Validate your JSON instantly to detect syntax errors, missing commas, or malformed structures. JSON Viewer AI highlights issues with clear error messages and line numbers, preventing runtime failures in your applications.
+
+<Steps>
+  <Step title="Paste JSON" icon="clipboard">
+    Enter or paste your JSON data into the editor.
+  </Step>
+  <Step title="Run Validation" icon="play">
+    Click "Validate" or let it auto-detect on input.
+  </Step>
+  <Step title="Review Errors" icon="alert-triangle">
+    See red underlines and a sidebar list of issues.
+  </Step>
+</Steps>
+
+Here's an invalid example:
+
+````json
+{
+  "user": {
+    "id": 123
+  "name": "Jane Doe",  // Missing comma
+}
+````
+
+The tool flags the missing comma on line 4 with: "Unexpected token n in JSON at position 20."
+
+## Beautification Options
+
+Transform minified or messy JSON into readable formats. Choose from indentation levels, trailing commas, or compact views to match your preferences.
+
+<Tabs>
+  <Tab title="2-Space Indent" icon="code">
+    ```json
+    {
+      "user": {
+        "id": 123,
+        "name": "Jane Doe",
+        "email": "jane@example.com"
+      }
+    }
+    ```
+  </Tab>
+  <Tab title="4-Space Indent" icon="code">
+    ```json
+    {
+        "user": {
+            "id": 123,
+            "name": "Jane Doe",
+            "email": "jane@example.com"
+        }
+    }
+    ```
+  </Tab>
+  <Tab title="Compact" icon="minimize">
+    ```json
+    {"user":{"id":123,"name":"Jane Doe","email":"jane@example.com"}}
+    ```
+  </Tab>
+</Tabs>
+
+<CodeGroup tabs="Raw,Beautified">
+  ```json
+  {"user":{"id":123,"name":"Jane Doe"}}
+  ```
+  ```json
+  {
+    "user": {
+      "id": 123,
+      "name": "Jane Doe"
+    }
+  }
+  ```
+</CodeGroup>
+
+## Advanced Usage
+
+<Expandable title="Customize Tree View Settings" default-open="false">
+
+Toggle options like showing line numbers, hiding empty arrays, or exporting the tree as JSONPath queries. For instance, copy the path `user.profile.preferences.theme` for direct access in scripts.
+
+</Expandable>
+
+These features work together seamlessly—validate first, beautify next, then explore the tree. Start with any JSON from APIs or logs to boost your productivity.

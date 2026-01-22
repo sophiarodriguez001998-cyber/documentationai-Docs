@@ -1,0 +1,134 @@
+---
+title: Troubleshooting Common JSON Issues
+description: Resolve frequent problems encountered when using JSON Viewer AI, such as parsing errors and validation failures.
+---
+
+## Invalid JSON Syntax Errors
+
+JSON Viewer AI parses your data strictly according to the JSON specification. Common syntax errors include missing quotes, unescaped characters, or incorrect brackets. You encounter these when copying data from logs or unformatted sources.
+
+<Callout kind="alert">
+  Always validate your JSON early. A single missing comma breaks the entire structure.
+</Callout>
+
+Follow these steps to identify and fix syntax errors:
+
+<Steps>
+  <Step title="Paste Your JSON" icon="clipboard">
+    Copy the raw JSON into the viewer. Note the line number where parsing fails.
+  </Step>
+  <Step title="Check Error Message" icon="alert-triangle">
+    Review the highlighted error. Common issues: `Unexpected token` or `Expected , or }`.
+  </Step>
+  <Step title="Fix Common Mistakes" icon="edit-3">
+    Add missing quotes around keys/values. Ensure proper escaping for strings with quotes: use `\"` inside strings.
+  </Step>
+  <Step title="Re-validate" icon="check-circle">
+    Beautify and re-parse. The tool auto-highlights remaining issues.
+  </Step>
+</Steps>
+
+Here's an example of invalid syntax and its fix:
+
+<CodeGroup tabs="Invalid,Valid">
+  ```json
+  {
+    "user": {
+      name: "Alice",  // Missing quotes around key
+      age: 30
+    }
+  }
+  ```
+  ```json
+  {
+    "user": {
+      "name": "Alice",
+      "age": 30
+    }
+  }
+  ```
+</CodeGroup>
+
+## Debugging Malformed Data Structures
+
+Malformed structures often stem from dynamic data sources like APIs or logs. Use the viewer's tree expansion to spot issues like duplicate keys or mismatched arrays.
+
+<Tabs>
+  <Tab title="Trailing Commas" icon="edit">
+    Trailing commas after the last item cause errors in strict parsers.
+    
+    ```json
+    {
+      "items": [
+        "apple",
+        "banana",
+      ]  // Remove this comma
+    }
+    ```
+    
+    <Callout kind="tip">
+      Enable "Strict Mode" in settings for early detection.
+    </Callout>
+  </Tab>
+  <Tab title="Unquoted Keys" icon="key">
+    JSON requires double quotes around keys.
+    
+    ```json
+    {
+      userId: 123,  // Invalid
+      "userId": 123  // Valid
+    }
+    ```
+  </Tab>
+  <Tab title="Nested Object Errors" icon="layers">
+    Mismatched braces in deep nests.
+    
+    ```json
+    {
+      "profile": {
+        "details": { "city": "NYC"  // Missing closing brace
+      }
+    }
+    ```
+  </Tab>
+</Tabs>
+
+## Tips for Large JSON Files
+
+Processing files over 10MB can slow your browser. Json Viewer AI optimizes for performance, but follow these tips.
+
+<Expandable title="Performance Optimization Strategies" default-open="true">
+  Use the "Lazy Load" option in settings to expand nodes on demand.
+  
+  Compress your JSON before upload with tools like `JSONC` or minifiers.
+  
+  For arrays with thousands of items, filter by path: `$.data.users[*].name`.
+  
+  ```javascript
+  // Example filter in console
+  const largeData = JSON.parse(file);
+  const users = largeData.data.users.slice(0, 100);  // Limit preview
+  ```
+</Expandable>
+
+<Columns cols={3}>
+  <Card title="Quick Fixes" icon="zap" href="#invalid-json">
+    Syntax checklist.
+  </Card>
+  <Card title="API Data Issues" icon="cloud" href="/quickstart">
+    Validate endpoints first.
+  </Card>
+  <Card title="Get Help" icon="help-circle" href="/faq">
+    Community solutions.
+  </Card>
+</Columns>
+
+| Error Type | Symptom | Fix |
+|------------|---------|-----|
+| Syntax Error | `Unexpected token` at line X | Check quotes/commas around line X |
+| Duplicate Key | `Redundant key` warning | Remove duplicates; last wins in parsers |
+| Depth Limit | `Max depth exceeded` | Flatten or use path queries |
+
+<Callout kind="success">
+  Most issues resolve in under 2 minutes with these steps. If stuck, share your JSON snippet in our forum.
+</Callout>
